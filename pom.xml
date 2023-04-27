@@ -64,7 +64,17 @@
             </dependency>
             <dependency>
                 <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-kubernetes-client-deployment</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-kubernetes-config</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-kubernetes-config-deployment</artifactId>
                 <version>${quarkus.version}</version>
             </dependency>
             <dependency>
@@ -74,7 +84,17 @@
             </dependency>
             <dependency>
                 <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-logging-json-deployment</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-grpc</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-grpc-deployment</artifactId>
                 <version>${quarkus.version}</version>
             </dependency>
             <dependency>
@@ -84,12 +104,27 @@
             </dependency>
             <dependency>
                 <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-opentelemetry-deployment</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-rest-client</artifactId>
                 <version>${quarkus.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-resteasy-reactive</artifactId>
+                <artifactId>quarkus-rest-client-deployment</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-resteasy</artifactId>
+                <version>${quarkus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-resteasy-deployment</artifactId>
                 <version>${quarkus.version}</version>
             </dependency>
 

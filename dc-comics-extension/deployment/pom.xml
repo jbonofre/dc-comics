@@ -39,6 +39,36 @@
 
         <!-- Quarkus extensions -->
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-grpc-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-kubernetes-client-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-kubernetes-config-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-logging-json-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-opentelemetry-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy-deployment</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-rest-client-deployment</artifactId>
+        </dependency>
+
+        <!-- DC Comics -->
+        <dependency>
             <groupId>com.dremio.cloud.comics</groupId>
             <artifactId>dc-comics-extension</artifactId>
         </dependency>

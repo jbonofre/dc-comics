@@ -15,7 +15,7 @@ public class RestService {
 
     private static Logger logger = LoggerFactory.getLogger(RestService.class);
 
-    // @Context
+    @Context
     UriInfo uriInfo;
 
     @GET
