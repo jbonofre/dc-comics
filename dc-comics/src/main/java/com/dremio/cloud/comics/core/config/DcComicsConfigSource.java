@@ -3,6 +3,7 @@ package com.dremio.cloud.comics.core.config;
 import org.eclipse.microprofile.config.spi.ConfigSource;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,7 +14,7 @@ public class DcComicsConfigSource implements ConfigSource {
     }
 
     public Set<String> getPropertyNames() {
-        return null;
+        return new HashSet<String>();
     }
 
     public int getOrdinal() {
