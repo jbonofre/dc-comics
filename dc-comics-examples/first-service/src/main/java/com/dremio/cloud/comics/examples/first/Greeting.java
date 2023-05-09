@@ -6,11 +6,11 @@ import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Context;
 import io.opentelemetry.instrumentation.annotations.WithSpan;
 import io.quarkus.runtime.ShutdownEvent;
-import io.quarkus.runtime.Startup;
 import io.quarkus.runtime.StartupEvent;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +19,9 @@ public class Greeting {
 
     @Inject
     Tracer tracer;
+
+    @ConfigProperty(name = "foo")
+    String foo;
 
     private final Logger logger = LoggerFactory.getLogger(Greeting.class);
 
@@ -29,7 +32,7 @@ public class Greeting {
                                         .setSpanKind(SpanKind.INTERNAL)
                                                 .startSpan();
         span.addEvent("Starting ...");
-        logger.info("Hello world !");
+        logger.info("Hello world ! I'm " + foo);
         span.addEvent("I'm done");
         span.end();
     }
