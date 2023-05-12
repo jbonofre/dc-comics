@@ -27,12 +27,16 @@
     <name>DC Comics :: Example :: First Service</name>
     <version>1.0.0-SNAPSHOT</version>
 
+    <properties>
+        <dc-comics.version>1.0.0-SNAPSHOT</dc-comics.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.dremio.cloud.comics</groupId>
                 <artifactId>dc-comics-bom</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${dc-comics.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -48,7 +52,6 @@
 
     <build>
         <plugins>
-            <!-- TODO: replace with dc-comics-maven-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -59,14 +62,13 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-maven-plugin</artifactId>
-                <version>3.0.1.Final</version>
+                <groupId>com.dremio.cloud.comics</groupId>
+                <artifactId>dc-comics-maven-plugin</artifactId>
+                <version>${dc-comics.version}</version>
                 <executions>
                     <execution>
                         <goals>
                             <goal>build</goal>
-                            <goal>generate-code</goal>
                         </goals>
                     </execution>
                 </executions>

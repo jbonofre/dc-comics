@@ -32,7 +32,7 @@
 
     <modules>
         <module>dc-comics-bom</module>
-        <!-- <module>dc-comics-maven-plugin</module> -->
+        <module>dc-comics-maven-plugin</module>
         <module>dc-comics-extension</module>
         <module>dc-comics</module>
 		<module>dc-comics-examples</module>
