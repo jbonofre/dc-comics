@@ -17,29 +17,29 @@ import org.slf4j.LoggerFactory;
 @ApplicationScoped
 public class Greeting {
 
-    @Inject
-    Tracer tracer;
+  @Inject Tracer tracer;
 
-    @ConfigProperty(name = "foo")
-    String foo;
+  @ConfigProperty(name = "foo")
+  String foo;
 
-    private final Logger logger = LoggerFactory.getLogger(Greeting.class);
+  private final Logger logger = LoggerFactory.getLogger(Greeting.class);
 
-    public void startup(@Observes StartupEvent startupEvent) {
-        Span span = tracer.spanBuilder("My custom span")
-                        .setAttribute("my.attr", "attr")
-                                .setParent(Context.current().with(Span.current()))
-                                        .setSpanKind(SpanKind.INTERNAL)
-                                                .startSpan();
-        span.addEvent("Starting ...");
-        logger.info("Hello world ! I'm " + foo);
-        span.addEvent("I'm done");
-        span.end();
-    }
+  public void startup(@Observes StartupEvent startupEvent) {
+    Span span =
+        tracer
+            .spanBuilder("My custom span")
+            .setAttribute("my.attr", "attr")
+            .setParent(Context.current().with(Span.current()))
+            .setSpanKind(SpanKind.INTERNAL)
+            .startSpan();
+    span.addEvent("Starting ...");
+    logger.info("Hello world ! I'm " + foo);
+    span.addEvent("I'm done");
+    span.end();
+  }
 
-    @WithSpan
-    public void shutdown(@Observes ShutdownEvent shutdownEvent) {
-        logger.info("Bye bye world !");
-    }
-
+  @WithSpan
+  public void shutdown(@Observes ShutdownEvent shutdownEvent) {
+    logger.info("Bye bye world !");
+  }
 }

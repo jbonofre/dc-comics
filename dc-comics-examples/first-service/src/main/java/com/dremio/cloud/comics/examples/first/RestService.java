@@ -13,27 +13,24 @@ import org.slf4j.LoggerFactory;
 @Path("/")
 public class RestService {
 
-    private static Logger logger = LoggerFactory.getLogger(RestService.class);
+  private static Logger logger = LoggerFactory.getLogger(RestService.class);
 
-    @Context
-    UriInfo uriInfo;
+  @Context UriInfo uriInfo;
 
-    @GET
-    @Path("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String hello() {
-        logger.info("hello");
-        return "hello";
-    }
+  @GET
+  @Path("/hello")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String hello() {
+    logger.info("hello");
+    return "hello";
+  }
 
-    @GET
-    @Path("/chain")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String chain() {
-        RestClient restClient = RestClientBuilder.newBuilder()
-                .baseUri(uriInfo.getBaseUri())
-                .build(RestClient.class);
-        return ("chain -> " + restClient.hello());
-    }
-
+  @GET
+  @Path("/chain")
+  @Produces(MediaType.TEXT_PLAIN)
+  public String chain() {
+    RestClient restClient =
+        RestClientBuilder.newBuilder().baseUri(uriInfo.getBaseUri()).build(RestClient.class);
+    return ("chain -> " + restClient.hello());
+  }
 }

@@ -16,156 +16,190 @@
     under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dremio.cloud.comics</groupId>
-    <artifactId>dc-comics-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>DC Comics</name>
-    <description>Reflectionless and selfcontained cloud application framework (no business code dependency on jakarta/spring/guice).</description>
-    <url>https://jbonofre.github.com/dc-comics</url>
+  <groupId>com.dremio.cloud.comics</groupId>
+  <artifactId>dc-comics-parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>DC Comics</name>
+  <description>Reflectionless and selfcontained cloud application framework (no business code dependency on jakarta/spring/guice).</description>
+  <url>https://jbonofre.github.com/dc-comics</url>
+  <inceptionYear>2023</inceptionYear>
 
-    <modules>
-        <module>dc-comics-bom</module>
-        <module>dc-comics-maven-plugin</module>
-        <module>dc-comics-extension</module>
-        <module>dc-comics</module>
-		<module>dc-comics-examples</module>
-    </modules>
+  <organization>
+    <name>Dremio</name>
+    <url>https://www.dremio.com</url>
+  </organization>
 
-    <properties>
-        <quarkus.version>3.0.3.Final</quarkus.version>
-        <maven.compiler.release>11</maven.compiler.release>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://github.com/jbonofre/dc-comics/blob/main/LICENSE</url>
+    </license>
+  </licenses>
 
-    <dependencyManagement>
-        <dependencies>
-            <!-- Quarkus -->
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-core</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-core-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-kubernetes-client</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-kubernetes-client-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-kubernetes-config</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-kubernetes-config-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-logging-json</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-logging-json-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-grpc</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-grpc-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-opentelemetry</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-opentelemetry-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-rest-client</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-rest-client-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-resteasy</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-resteasy-deployment</artifactId>
-                <version>${quarkus.version}</version>
-            </dependency>
+  <developers>
+    <developer>
+      <id>jbonofre</id>
+      <name>JB Onofré</name>
+      <roles>
+        <role>Contributor</role>
+      </roles>
+      <timezone>GMT+1</timezone>
+    </developer>
+  </developers>
 
-            <!-- DC Comics -->
-            <dependency>
-                <groupId>com.dremio.cloud.comics</groupId>
-                <artifactId>dc-comics-extension</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <modules>
+    <module>dc-comics-bom</module>
+    <module>dc-comics-maven-plugin</module>
+    <module>dc-comics-extension</module>
+    <module>dc-comics</module>
+    <module>dc-comics-examples</module>
+  </modules>
 
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://github.com/jbonofre/dc-comics/blob/main/LICENSE</url>
-        </license>
-    </licenses>
+  <scm>
+    <connection>scm:git:https://github.com/jbonofre/dc-comics</connection>
+    <developerConnection>scm:git:https://github.com/jbonofre/dc-comics</developerConnection>
+    <url>https://github.com/jbonofre/dc-comics</url>
+  </scm>
 
-    <developers>
-        <developer>
-            <name>JB Onofré</name>
-            <id>jbonofre</id>
-            <roles>
-                <role>Contributor</role>
-            </roles>
-            <timezone>GMT+1</timezone>
-        </developer>
-    </developers>
+  <properties>
+    <quarkus.version>3.0.3.Final</quarkus.version>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-    <scm>
-        <connection>scm:git:https://github.com/jbonofre/dc-comics</connection>
-        <developerConnection>scm:git:https://github.com/jbonofre/dc-comics</developerConnection>
-        <url>https://github.com/jbonofre/dc-comics</url>
-    </scm>
+  <dependencyManagement>
+    <dependencies>
+      <!-- DC Comics -->
+      <dependency>
+        <groupId>com.dremio.cloud.comics</groupId>
+        <artifactId>dc-comics-extension</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <!-- Quarkus -->
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-core</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-core-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-grpc</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-grpc-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-kubernetes-client</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-kubernetes-client-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-kubernetes-config</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-kubernetes-config-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-logging-json</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-logging-json-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-opentelemetry</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-opentelemetry-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-rest-client</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-rest-client-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-resteasy</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-resteasy-deployment</artifactId>
+        <version>${quarkus.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
-    <organization>
-        <name>Dremio</name>
-        <url>https://www.dremio.com</url>
-    </organization>
-
-    <inceptionYear>2023</inceptionYear>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.29.0</version>
+        <configuration>
+          <pom>
+            <sortPom>
+              <expandEmptyElements>false</expandEmptyElements>
+              <indentSchemaLocation>true</indentSchemaLocation>
+              <sortDependencies>scope,groupId,artifactId</sortDependencies>
+              <sortDependencyExclusions>groupId,artifactId</sortDependencyExclusions>
+              <sortPlugins>groupId,artifactId</sortPlugins>
+            </sortPom>
+          </pom>
+          <java>
+            <googleJavaFormat/>
+            <formatAnnotations/>
+            <importOrder/>
+            <removeUnusedImports/>
+            <endWithNewline/>
+          </java>
+          <!-- TODO properties, yaml, md, js, css -->
+        </configuration>
+        <executions>
+          <execution>
+            <id>check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

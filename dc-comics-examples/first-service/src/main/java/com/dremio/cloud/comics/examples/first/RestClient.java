@@ -8,9 +8,8 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/")
 public interface RestClient {
 
-    @GET
-    @Path("/hello")
-    @Produces(MediaType.TEXT_PLAIN)
-    String hello();
-
+  @GET
+  @Path("/hello")
+  @Produces(MediaType.TEXT_PLAIN)
+  String hello();
 }
