@@ -55,11 +55,12 @@
   </developers>
 
   <modules>
+    <module>dc-comics</module>
     <module>dc-comics-bom</module>
     <module>dc-comics-maven-plugin</module>
-    <module>dc-comics-extension</module>
-    <module>dc-comics</module>
-    <module>dc-comics-examples</module>
+    <module>extension/deployment</module>
+    <module>extension/runtime</module>
+    <module>examples/first-service</module>
   </modules>
 
   <scm>
