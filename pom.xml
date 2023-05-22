@@ -55,7 +55,7 @@
   </developers>
 
   <modules>
-    <module>dc-comics</module>
+    <module>core</module>
     <module>bom</module>
     <module>maven-plugin</module>
     <module>extension/deployment</module>
