@@ -34,14 +34,14 @@ import org.apache.maven.plugins.annotations.ResolutionScope;
     threadSafe = true)
 public class BuildMojo extends io.quarkus.maven.BuildMojo {
 
-  @Parameter(defaultValue = "false", property = "dc.comics.rename.skip")
-  boolean skipDcComicsRename = false;
+  @Parameter(defaultValue = "false", property = "dc.comics.rename")
+  boolean renaming = false;
 
   @Override
   public void doExecute() throws MojoExecutionException {
     super.doExecute();
 
-    if (!skipDcComicsRename) {
+    if (renaming) {
       try {
         String buildDirectory = mavenProject().getBuild().getDirectory();
 
